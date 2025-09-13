@@ -9,16 +9,16 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Connection à MongoDB
+// Connection to MongoDB
 mongoose.connect('mongodb://localhost:27017/ecommerce', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connecté à MongoDB'))
-  .catch(err => console.error('Erreur de connexion à MongoDB', err));
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Connection error to MongoDB', err));
 
 // Routes
 app.get('/', (req, res) => {
-  res.send('API fonctionne !');
+  res.send('API is working!');
 });
 
 app.listen(PORT, () => {
-  console.log(`Serveur en écoute sur le port ${PORT}`);
+  console.log(`Server listening on port ${PORT}`);
 });
